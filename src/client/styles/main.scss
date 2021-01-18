@@ -1,0 +1,48 @@
+@import 'reset';
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+$main-color: black;
+$second-color: lightgrey;
+$bg-color: rgb(236, 236, 236);
+$content-bg-color: white;
+$margin: 10px;
+$padding: 10px;
+
+body {
+    background-color: $bg-color;
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    justify-content: center;
+
+    #root {
+        margin-top: 30px;
+        background-color: $content-bg-color;
+        padding: $padding;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    section {
+        margin-top: $margin;
+    }
+
+    p {}
+
+    input {
+        border: 1px solid $second-color;
+        padding: $padding;
+        min-width: 15vw;
+    }
+
+    button {
+        padding: $padding;
+        background-color: dodgerblue;
+        border: 1px solid $second-color;
+        color: white;
+    }
+}
