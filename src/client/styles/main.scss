@@ -3,7 +3,7 @@
 
 $main-color: black;
 $second-color: lightgrey;
-$bg-color: rgb(236, 236, 236);
+$bg-color: rgb(58, 58, 58);
 $content-bg-color: white;
 $margin: 10px;
 $padding: 10px;
@@ -19,30 +19,32 @@ body {
         background-color: $content-bg-color;
         padding: $padding;
         border-radius: 10px;
-    }
 
-    h1 {
-        font-weight: bold;
-        font-size: 20px;
-        text-align: center;
-    }
+        h1 {
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+        }
 
-    section {
-        margin-top: $margin;
-    }
+        section {
+            margin-top: $margin;
+        }
 
-    p {}
+        p {
+            font-size: 20px;
+        }
 
-    input {
-        border: 1px solid $second-color;
-        padding: $padding;
-        min-width: 15vw;
-    }
+        input {
+            border: 1px solid $second-color;
+            padding: $padding;
+            min-width: 15vw;
+        }
 
-    button {
-        padding: $padding;
-        background-color: dodgerblue;
-        border: 1px solid $second-color;
-        color: white;
+        button {
+            padding: $padding;
+            background-color: dodgerblue;
+            border: 1px solid $second-color;
+            color: white;
+        }
     }
 }
