@@ -4,22 +4,34 @@ const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
 const dotenv = require('dotenv')
 
+// Helper for logging
+const logger = (log, obj = undefined) => {
+    if (process.env.NODE_ENV == 'development') {
+        if (obj === undefined) {
+            console.log(log)
+        } else {
+            console.log(log, obj)
+        }
+    }
+}
+
 // Verify keys
 dotenv.config();
-console.log(`Your KEY is ${process.env.KEY}`)
-console.log(`Your ENDPOINT is ${process.env.ENDPOINT}`)
+logger(`Your KEY is ${process.env.KEY}`)
+logger(`Your ENDPOINT is ${process.env.ENDPOINT}`)
 
-// Setup express
+// Setup Express
 const server = express();
 const port = 8081;
 server.use(cors());
 server.use(bodyParser.json());
+server.use('/', express.static('./dist/'));
 
-// Routes
+// Route
 server.post('/evaluate', (req, res) => {
 
     // Validation
-    console.log('Request received on [POST] /evaluate', req.body);
+    logger('Request received on [POST] /evaluate', req.body);
     if (req.body.postURL === undefined) {
         res.send({ 'error': 'missing postURL value on request' })
     }
@@ -38,9 +50,10 @@ server.post('/evaluate', (req, res) => {
                 irony,
                 confidence
             })
+            logger(`Result from MeaningCloud: Agreement(${agreement}), Subjectivity(${subjectivity}), Irony(${irony}), Confidence(${confidence})`)
         })
         .catch(error => {
-            console.log(error)
+            logger(error)
             res.send({ error })
         });
 })
@@ -48,5 +61,5 @@ server.post('/evaluate', (req, res) => {
 
 // Start
 server.listen(port, () => {
-    console.log(`Starting server on port ${port}`);
+    logger(`Starting server on port ${port}`);
 });

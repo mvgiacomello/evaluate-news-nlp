@@ -4,6 +4,7 @@ import "./styles/main.scss"
 document.getElementById('evaluate').addEventListener('click', () => {
     const websiteInput = document.getElementById('website')
     const resultOutput = document.getElementById('result')
+    resultOutput.innerText = 'Processing...'
     evaluate(websiteInput.value).then(data => {
         resultOutput.innerText = data
     }).catch(error => {
