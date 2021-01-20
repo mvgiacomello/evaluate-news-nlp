@@ -5,9 +5,9 @@ An exercise of webpack, sass, jest, express for Udacity.
 ## Project Structure
 
 All front-end code is inside `src/client`. You'll find a few folder such as:
-- `js`, containing all the javascript functionality
-- `styles`, our sass/styling for the webpage
-- `views`, the html
+- `./js/`, containing all the javascript functionality
+- `./styles/`, our sass/styling for the webpage
+- `./views/`, the html
 
 You'll also find our js entrypoing `index.js`.
 
@@ -16,6 +16,8 @@ The server code is all inside the `server.js` file in the root directory. Check 
 ### Service Worker
 
 A service worker is put in place so the website can have limited off-line functionality.
+
+---
 
 ## Building the project
 
